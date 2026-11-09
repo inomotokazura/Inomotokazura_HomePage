@@ -119,6 +119,64 @@
 }
 #works .work-card > .card-body p, #original-work .work-card > .card-body p {line-height: 1.8 !important;}
 #work-detail-dialog .service-bottom-close {display: none !important;}
+</style><style data-inomoto-card-layout="v9">
+/* v9: 縦長カード。画像と本文は別の通常フローに固定する */
+#works .cards > .work-card, #original-work .cards > .work-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 410px;
+  position: relative;
+  overflow: hidden !important;
+}
+#works .work-card > .card-art, #original-work .work-card > .card-art {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+#works .work-card > .card-art > img, #original-work .work-card > .card-art > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+}
+#works .work-card > .card-body, #original-work .work-card > .card-body {
+  display: block !important;
+  position: relative !important;
+  flex: 1 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 190px;
+  padding: 20px !important;
+  margin: 0 !important;
+  background: #FDFFEB !important;
+  z-index: 2 !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body h3, #original-work .work-card > .card-body h3,
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {
+  position: static !important;
+  transform: none !important;
+  float: none !important;
+  max-height: none !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {line-height: 1.8 !important;}
+#work-detail-dialog .service-bottom-close {display: none !important;}
 </style></head>
 <body>
 <header class="site-header"><a class="brand" href="#home" aria-label="ページの一番上へ戻る">TOP</a><nav aria-label="メインメニュー"><a href="#profile">PROFILE</a><a href="#works">WORKS</a><a href="#original-work">ORIGINAL WORK</a><a href="#order">ORDER</a><a href="#likes">LIKES</a><a href="#contact">CONTACT</a></nav></header>
@@ -141,9 +199,9 @@
  </div>
  <div class="browser-content">
  <div class="profile-sheet">
- <div class="profile-heading"><span class="profile-sticker profile-icon"><img src="assets/inomoto_icon.svg" alt="いのもとのプロフィールアイコン"></span><div><span class="profile-overline"></span><h3>INOMOTO KAZURA</h3><p>3DCG MODELER / CREATOR</p></div></div>
+ <div class="profile-heading"><span class="profile-sticker profile-icon"><img src="assets/inomoto_icon.svg" alt="いのもとのプロフィールアイコン"></span><div><span class="profile-overline">INOMOTO　KAZURA</span><h3>伊ノ本カズラ</h3><p>3DCG MODELER / CREATOR</p></div></div>
  <dl class="profile-details">
- <div><dt>NAME</dt><dd>INOMOTO KAZURA</dd></div>
+ <div><dt>NAME</dt><dd>伊ノ本カズラ</dd></div>
  <div><dt>WORK</dt><dd>フリーランスの3DCGモデラー</dd></div>
  <div><dt>CREATE</dt><dd>3Dキャラクター・VRChatアバター・衣装制作・プロップ制作</dd></div>
  <div><dt>LIKES</dt><dd>ゲーム・モデリング・お絵描き・ごはん</dd></div>
@@ -156,7 +214,7 @@
  </div>
 </section>
 
-<section class="content-section works-section" id="works"><div class="section-heading"><h2>WORKS <span>✦</span></h2><p>お仕事で制作したデザイン・制作実績</p></div><div class="cards"><article class="work-card" data-work-number="11"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179837738-152256.webp"></div><div class="card-body"><span class="tag">2026</span><h3>女性アバター向け衣装の制作</h3><p>メタバースクリエイターズ様のご依頼で人気Vtuverまんさや様の衣装デザインを制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8290919" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179853734-537054.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179858200-941569.webp"></div></div></article><article class="work-card" data-work-number="10"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179681571-148036.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバターの頭部制作</h3><p>メタバースクリエイターズ様のご依頼でVRChatの男性アバターを頭部部分のみ制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/7430852" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179711061-279355.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179719294-483400.webp"></div></div></article><article class="work-card" data-work-number="9"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179580723-548120.webp"></div><div class="card-body"><span class="tag">2025</span><h3>VRChatアバター向けの衣装</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatのアバター向けの衣装を制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8178003" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"></div></div></article><article class="work-card" data-work-number="8"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179423549-864634.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6738972" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179456965-385566.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179460936-508181.webp"></div></div></article><article class="work-card" data-work-number="7"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179402520-243005.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6640279" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179406885-465615.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179410754-555326.webp"></div></div></article><article class="work-card" data-work-number="6"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179278446-602209.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6526246" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179345668-98581.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179348370-302553.webp"></div></div></article><article class="work-card" data-work-number="5"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179184120-256276.webp"></div><div class="card-body"><span class="tag">2024</span><h3>『Vket』プロップ作成</h3><p>バーチャルマーケット2024 Winter より
+<section class="content-section works-section" id="works"><div class="section-heading"><h2>WORKS <span>✦</span></h2><p>お仕事で制作したデザイン・制作実績</p></div><div class="cards"><article class="work-card" data-work-number="11"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179837738-152256.webp"></div><div class="card-body"><span class="tag">2026</span><h3>女性アバター向け衣装の制作</h3><p>メタバースクリエイターズ様のご依頼で人気Vtuverまんさや様の衣装デザインを制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8290919" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179853734-537054.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179858200-941569.webp"></div></div></article><article class="work-card" data-work-number="10"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179681571-148036.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバターの頭部制作</h3><p>メタバースクリエイターズ様のご依頼でVRChatの男性アバターを頭部部分のみ制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/7430852" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179711061-279355.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179719294-483400.webp"></div></div></article><article class="work-card" data-work-number="9"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179580723-548120.webp"></div><div class="card-body"><span class="tag">2025</span><h3>VRChatアバター向けの衣装</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatのアバター向けの衣装を制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8178003" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794246487110-720308.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794246492012-56302.webp"></div></div></article><article class="work-card" data-work-number="8"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179423549-864634.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6738972" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179456965-385566.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179460936-508181.webp"></div></div></article><article class="work-card" data-work-number="7"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179402520-243005.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6640279" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179406885-465615.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179410754-555326.webp"></div></div></article><article class="work-card" data-work-number="6"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179278446-602209.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6526246" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179345668-98581.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179348370-302553.webp"></div></div></article><article class="work-card" data-work-number="5"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179184120-256276.webp"></div><div class="card-body"><span class="tag">2024</span><h3>『Vket』プロップ作成</h3><p>バーチャルマーケット2024 Winter より
 シルク・ド・ペルソナージュの演目プロップを一部作成しました</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p>複数のプロップを制作しました</p><p><br>
 <a href="https://x.com/Virtual_Market_/status/1864625775905001588" target="_blank" rel="noopener noreferrer"></a></p><p><a href="https://x.com/Virtual_Market_/status/1864625775905001588" target="_blank" rel="noopener noreferrer">一般出展ワールド制作チーム紹介映像(Xのページに飛びます)</a></p></div><div class="work-detail-gallery"></div></div></article><article class="work-card" data-work-number="4"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179036064-50647.webp"></div><div class="card-body"><span class="tag">2024</span><h3>『Vket』プロップ作成</h3><p>バーチャルマーケット2024 Summer より
 株式会社メッセホールディングス様の企業ブースの一部プロップを作成しました</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p>複数のプロップを制作いたしました</p><br>
