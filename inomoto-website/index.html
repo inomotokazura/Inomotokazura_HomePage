@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FDFFEB"><meta name="description" content="INOMOTOの個人サイト。3DCG作品と好きなものを集めた場所。">
+<title>INOMOTO | little world</title><link rel="stylesheet" href="style.css"><script src="script.js" defer=""></script>
+<style data-inomoto-card-layout="v9">
+/* v9: 縦長カード。画像と本文は別の通常フローに固定する */
+#works .cards > .work-card, #original-work .cards > .work-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 410px;
+  position: relative;
+  overflow: hidden !important;
+}
+#works .work-card > .card-art, #original-work .work-card > .card-art {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+#works .work-card > .card-art > img, #original-work .work-card > .card-art > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+}
+#works .work-card > .card-body, #original-work .work-card > .card-body {
+  display: block !important;
+  position: relative !important;
+  flex: 1 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 190px;
+  padding: 20px !important;
+  margin: 0 !important;
+  background: #FDFFEB !important;
+  z-index: 2 !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body h3, #original-work .work-card > .card-body h3,
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {
+  position: static !important;
+  transform: none !important;
+  float: none !important;
+  max-height: none !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {line-height: 1.8 !important;}
+#work-detail-dialog .service-bottom-close {display: none !important;}
+</style><style data-inomoto-card-layout="v9">
+/* v9: 縦長カード。画像と本文は別の通常フローに固定する */
+#works .cards > .work-card, #original-work .cards > .work-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 410px;
+  position: relative;
+  overflow: hidden !important;
+}
+#works .work-card > .card-art, #original-work .work-card > .card-art {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+#works .work-card > .card-art > img, #original-work .work-card > .card-art > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+}
+#works .work-card > .card-body, #original-work .work-card > .card-body {
+  display: block !important;
+  position: relative !important;
+  flex: 1 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 190px;
+  padding: 20px !important;
+  margin: 0 !important;
+  background: #FDFFEB !important;
+  z-index: 2 !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body h3, #original-work .work-card > .card-body h3,
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {
+  position: static !important;
+  transform: none !important;
+  float: none !important;
+  max-height: none !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {line-height: 1.8 !important;}
+#work-detail-dialog .service-bottom-close {display: none !important;}
+</style><style data-inomoto-card-layout="v9">
+/* v9: 縦長カード。画像と本文は別の通常フローに固定する */
+#works .cards > .work-card, #original-work .cards > .work-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 410px;
+  position: relative;
+  overflow: hidden !important;
+}
+#works .work-card > .card-art, #original-work .work-card > .card-art {
+  position: relative !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+#works .work-card > .card-art > img, #original-work .work-card > .card-art > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  margin: 0 !important;
+}
+#works .work-card > .card-body, #original-work .work-card > .card-body {
+  display: block !important;
+  position: relative !important;
+  flex: 1 0 auto !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 190px;
+  padding: 20px !important;
+  margin: 0 !important;
+  background: #FDFFEB !important;
+  z-index: 2 !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body h3, #original-work .work-card > .card-body h3,
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {
+  position: static !important;
+  transform: none !important;
+  float: none !important;
+  max-height: none !important;
+  overflow-wrap: anywhere;
+}
+#works .work-card > .card-body p, #original-work .work-card > .card-body p {line-height: 1.8 !important;}
+#work-detail-dialog .service-bottom-close {display: none !important;}
+</style></head>
+<body>
+<header class="site-header"><a class="brand" href="#home" aria-label="ページの一番上へ戻る">TOP</a><nav aria-label="メインメニュー"><a href="#profile">PROFILE</a><a href="#works">WORKS</a><a href="#original-work">ORIGINAL WORK</a><a href="#order">ORDER</a><a href="#likes">LIKES</a><a href="#contact">CONTACT</a></nav></header>
+<main>
+<section class="hero" id="home" aria-label="トップページ">
+<div class="hero-bg" aria-hidden="true"></div><div class="hero-shade" aria-hidden="true"></div>
+<span class="decor d1" aria-hidden="true">🍙</span><span class="decor d2" aria-hidden="true">🍤</span><span class="decor d3" aria-hidden="true">🍣</span><span class="decor d4" aria-hidden="true">🥩</span>
+<div class="hero-inner">
+<div class="art-stack"><img class="name-art" src="assets/name.svg" alt="INOMOTO KAZURA"><img class="character-art" src="assets/character.svg" alt="オリジナルキャラクター"></div>
+</div>
+
+</section>
+<section class="content-section profile-section" id="profile" aria-labelledby="profile-title">
+ <div class="section-heading"><h2 id="profile-title">PROFILE</h2></div>
+ <div class="browser-window">
+ <div class="browser-bar">
+ <div class="browser-dots" aria-hidden="true"></div>
+ <div class="browser-address"><span aria-hidden="true"></span> inomoto.local / profile</div>
+ <div class="browser-star" aria-hidden="true">☆</div>
+ </div>
+ <div class="browser-content">
+ <div class="profile-sheet">
+ <div class="profile-heading"><span class="profile-sticker profile-icon"><img src="assets/inomoto_icon.svg" alt="いのもとのプロフィールアイコン"></span><div><span class="profile-overline">INOMOTO　KAZURA</span><h3>伊ノ本カズラ</h3><p>3DCG MODELER / CREATOR</p></div></div>
+ <dl class="profile-details">
+ <div><dt>NAME</dt><dd>伊ノ本カズラ</dd></div>
+ <div><dt>WORK</dt><dd>フリーランスの3DCGモデラー</dd></div>
+ <div><dt>CREATE</dt><dd>3Dキャラクター・VRChatアバター・衣装制作・プロップ制作</dd></div>
+ <div><dt>LIKES</dt><dd>ゲーム・モデリング・お絵描き・ごはん</dd></div>
+ </dl>
+ <p class="profile-message">ゆるいものと筋肉質で耽美なものが大好きです興味のあるものはなんでもやりたいと思うので3DCGのみならず映像や立体造形やイラストなどいろんなものを好きにやってます</p>
+ <p class="profile-edit-note"></p>
+ </div>
+ </div>
+ <div class="browser-status"><span>✦ welcome to my profile ✦</span><span>100% </span></div>
+ </div>
+</section>
+
+<section class="content-section works-section" id="works"><div class="section-heading"><h2>WORKS <span>✦</span></h2><p>お仕事で制作したデザイン・制作実績</p></div><div class="cards"><article class="work-card" data-work-number="11"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179837738-152256.webp"></div><div class="card-body"><span class="tag">2026</span><h3>女性アバター向け衣装の制作</h3><p>メタバースクリエイターズ様のご依頼で人気Vtuverまんさや様の衣装デザインを制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8290919" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179853734-537054.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179858200-941569.webp"></div></div></article><article class="work-card" data-work-number="10"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179681571-148036.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバターの頭部制作</h3><p>メタバースクリエイターズ様のご依頼でVRChatの男性アバターを頭部部分のみ制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/7430852" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179711061-279355.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179719294-483400.webp"></div></div></article><article class="work-card" data-work-number="9"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179580723-548120.webp"></div><div class="card-body"><span class="tag">2025</span><h3>VRChatアバター向けの衣装</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatのアバター向けの衣装を制作しました。BOOTHショップ『MetaCreatorsTYO Girls』にて販売中です  </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacre-girls.booth.pm/items/8178003" target="_blank" rel="noopener noreferrer">『MetaCreatorsTYO Girls』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794246487110-720308.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794246492012-56302.webp"></div></div></article><article class="work-card" data-work-number="8"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179423549-864634.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6738972" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179456965-385566.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179460936-508181.webp"></div></div></article><article class="work-card" data-work-number="7"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179402520-243005.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6640279" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179406885-465615.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179410754-555326.webp"></div></div></article><article class="work-card" data-work-number="6"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179278446-602209.webp"></div><div class="card-body"><span class="tag">2025</span><h3>男性アバター向けの衣装の制作</h3><p>メタバースクリエイターズ様のプロジェクト『クリエイタープログラム』にてVRChatの男性アバター向けの衣装を制作しました。BOOTHショップ『 MetaCreatorsTYO 』にて販売中です </p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://metacreatorstyo.booth.pm/items/6526246" target="_blank" rel="noopener noreferrer">『 MetaCreatorsTYO 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179345668-98581.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179348370-302553.webp"></div></div></article><article class="work-card" data-work-number="5"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179184120-256276.webp"></div><div class="card-body"><span class="tag">2024</span><h3>『Vket』プロップ作成</h3><p>バーチャルマーケット2024 Winter より
+シルク・ド・ペルソナージュの演目プロップを一部作成しました</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p>複数のプロップを制作しました</p><p><br>
+<a href="https://x.com/Virtual_Market_/status/1864625775905001588" target="_blank" rel="noopener noreferrer"></a></p><p><a href="https://x.com/Virtual_Market_/status/1864625775905001588" target="_blank" rel="noopener noreferrer">一般出展ワールド制作チーム紹介映像(Xのページに飛びます)</a></p></div><div class="work-detail-gallery"></div></div></article><article class="work-card" data-work-number="4"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179036064-50647.webp"></div><div class="card-body"><span class="tag">2024</span><h3>『Vket』プロップ作成</h3><p>バーチャルマーケット2024 Summer より
+株式会社メッセホールディングス様の企業ブースの一部プロップを作成しました</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p>複数のプロップを制作いたしました</p><br>
+<a href="https://prtimes.jp/main/html/rd/p/000000356.000034617.html" target="_blank" rel="noopener noreferrer">当時の掲載記事はこちら(外部リンクへ移動します)</a></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179041775-435784.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179046673-752530.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179050982-180924.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179154197-234884.webp"></div></div></article><article class="work-card" data-work-number="3"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794178915178-744343.webp"></div><div class="card-body"><span class="tag">2024</span><h3>大丸松坂屋アバター『璃空』</h3><p>大丸松坂屋百貨店様のご依頼でVRChat向け男性アバターを制作しました。『 大丸・松坂屋アバター販売公式 』にて販売中です</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://dm-avatar.booth.pm/" target="_blank" rel="noopener noreferrer">『 大丸・松坂屋アバター販売公式 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794178922586-227294.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794178927556-247050.webp"></div></div></article><article class="work-card" data-work-number="2"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794177709621-850913.webp"></div><div class="card-body"><span class="tag">2023</span><h3>大丸松坂屋アバター『鳳蝶』</h3><p>大丸松坂屋百貨店様のご依頼でVRChat向け男性アバターを制作しました。『 大丸・松坂屋アバター販売公式 』にて販売中です</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://dm-avatar.booth.pm/" target="_blank" rel="noopener noreferrer">『 大丸・松坂屋アバター販売公式 』のリンクはこちら(外部リンクへ移動します)</a></p></div><div class="work-detail-gallery"><img alt="" src="assets/uploads/image-1794177748640-402909.webp"><img alt="" src="assets/uploads/image-1794177761552-566440.webp"></div></div></article><article class="work-card" data-work-number="1"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794178805837-284792.webp"></div><div class="card-body"><span class="tag">2023</span><h3>『Vket』プロップ作成</h3><p> バーチャルマーケット2023 Winter より
+オーロラ株式会社様の企業ブースの一部プロップを作成しました</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p>ガチャガチャの3DCG部分をモデリングしました。</p><br>
+<a href="https://prtimes.jp/main/html/rd/p/000000282.000034617.html" target="_blank" rel="noopener noreferrer">当時の掲載記事はこちら(外部リンクへ移動します)</a></div><div class="work-detail-gallery"></div></div></article></div></section>
+<section class="content-section original-section" id="original-work" aria-labelledby="original-title">
+ <div class="section-heading"><h2 id="original-title">ORIGINAL WORK </h2><p>自主制作の作品たち</p></div>
+ <div class="cards">
+ 
+ 
+ 
+ <article class="work-card" data-work-number="6"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794180544051-825189.webp"></div><div class="card-body"><span class="tag">2026</span><h3>【19アバター対応】OluOlu</h3><p>夏の定番ファッションに心躍るような柄をアクセントに加えました
+ユニセックスデザインの為性別を問わず着用できます</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/8665763" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794180550943-693353.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794180565460-982210.webp"></div></div></article><article class="work-card" data-work-number="5"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794180478427-953219.webp"></div><div class="card-body"><span class="tag">2025</span><h3>【オリジナル3Dモデル】熨斗目:Re（Noshime:Re)</h3><p>VRchat用男性アバター「熨斗目:Re(のしめ:Re)」
+垂れ目のセミロングが特徴的なお兄さんアバター
+(過去作のリメイクです)</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/7423591" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794180497031-444310.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794180500457-785117.webp"></div></div></article><article class="work-card" data-work-number="4"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794180379036-343139.webp"></div><div class="card-body"><span class="tag">3D MODEL</span><h3>【20アバター対応】Divine Anubis Attire【MA対応】</h3><p>アヌビスの神官をモチーフとした衣装です
+神聖な雰囲気を出しつつ落ち着いたデザインとなっております
+計20アバターに対応しております。
+(過去作のリメイクです)</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/7018110" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794180410148-198815.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794180415544-502041.webp"></div></div></article><article class="work-card" data-work-number="3"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794180256817-83926.webp"></div><div class="card-body"><span class="tag">2023</span><h3>【熨斗目対応】Divine Anubis Attire【MA対応】</h3><p>アヌビスモチーフの衣装と杖のモデルです
+VRC向け男性アバター「熨斗目(のしめ)」に対応しています</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/4900104" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794180284162-202178.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794180289184-894744.webp"></div></div></article><article class="work-card" data-work-number="2"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794180068139-159201.webp"></div><div class="card-body"><span class="tag">2023</span><h3>【VRC向け】深緋(こきあけ)【オリジナル3Dモデル】</h3><p>VRchat用オリジナル3Dモデル「深緋(こきあけ)」
+天使と人間のハーフで、少し気が強い女の子アバターです</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/4785629" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794180075593-124213.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794180079490-715950.webp"></div></div></article><article class="work-card" data-work-number="1"><div class="card-art"><img alt="作品画像" style="width: 100%; height: 100%; object-fit: cover;" src="assets/uploads/image-1794179966785-388153.webp"></div><div class="card-body"><span class="tag">2022</span><h3>【VRC向け】熨斗目(のしめ)【オリジナル】</h3><p>VRchat用男性アバター「熨斗目(のしめ)」
+垂れ目でセミロングで程よく(?)筋肉質なアバターです。</p></div><div class="work-detail-data" hidden=""><div class="work-detail-description"><p><a href="https://inomotokazura.booth.pm/items/4004498" target="_blank" rel="noopener noreferrer">BOOTH『伊ノ本飯店』にて販売しております</a></p></div><div class="work-detail-gallery"><img alt="作品詳細画像" src="assets/uploads/image-1794179981099-204728.webp"><img alt="作品詳細画像" src="assets/uploads/image-1794179985260-629410.webp"></div></div></article></div>
+</section>
+<section class="content-section order-section" id="order" aria-labelledby="order-title">
+ <div class="section-heading"><h2 id="order-title">ORDER</h2></div>
+ <div class="browser-window order-window">
+  <div class="browser-bar"><div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div><div class="browser-address">inomoto.local / order</div><span class="browser-star" aria-hidden="true">☆</span></div>
+  <div class="order-content">
+   <h3>制作のご依頼について</h3>
+   <p>3DCGモデルやデザイン制作のご相談についてご案内するページです。</p>
+   <div class="order-grid">
+    <button class="order-item order-open" type="button" id="open-service-dialog" aria-haspopup="dialog" aria-controls="service-dialog"><span class="order-label">01</span><h4>制作内容</h4><p>Vtuver,VRChatアバター等様々な用途に合わせて対応可能です</p><span class="order-more">詳しく見る ↗</span></button>
+    <button class="order-item order-open" type="button" id="open-flow-dialog" aria-haspopup="dialog" aria-controls="flow-dialog"><span class="order-label">02</span><h4>制作の流れ</h4><p>ご相談から納品までの流れをこちらに掲載しております</p><span class="order-more">詳しく見る ↗</span></button>
+    <button class="order-item order-open" type="button" id="open-price-dialog" aria-haspopup="dialog" aria-controls="price-dialog"><span class="order-label">03</span><h4>料金・納期</h4><p>お見積もりや制作期間についてのご案内を掲載しております</p><span class="order-more">詳しく見る ↗</span></button>
+   </div>
+   <p class="order-note"></p>
+   <a class="pill-button" href="#contact">お問い合わせはこちら ↗</a>
+  </div>
+  <div class="browser-status"><span>ORDER INFORMATION</span><span>INOMOTO</span></div>
+ </div>
+</section>
+<section class="content-section" id="likes"><div class="section-heading"><h2>LIKES </h2><p>好きなものたち</p></div><div class="likes-grid"><button class="like-tile" data-message="LocoRoco、どうぶつの森シリーズ、塊魂、Stardew Valley等のほのぼのしたゲームやOverwatch等が好きです">🎮 <span>GAMES</span></button><button class="like-tile" data-message="🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩🥩">🍮 <span>FOOD</span></button><button class="like-tile" data-message="3DCGモデリングやお絵描き大好き、映像制作やフィギュア制作にも興味があります">🎨 <span>CREATIVE</span></button></div><p class="like-message" id="like-message" aria-live="polite">気になるカードをクリックしてね </p></section>
+<section class="content-section contact-section" id="contact"><div class="section-heading"><h2>CONTACT <span>✉</span></h2><p>ご連絡はこちら</p></div><div class="paper contact-paper"><p>お仕事のご相談やお問い合わせは、下記のリンクからどうぞ。</p><div class="contact-links"><a class="pill-button" href="https://x.com/kokonisaretai_i" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a><a class="pill-button secondary" href="https://inomotokazura.booth.pm/" target="_blank" rel="noopener noreferrer">BOOTH ↗</a></div><p class="tiny"></p></div></section>
+</main><dialog id="work-detail-dialog" class="service-dialog work-detail-dialog" aria-labelledby="work-detail-title"><div class="service-browser"><div class="service-browser-bar"><div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div><div class="browser-address">inomoto.local / works / detail</div><button type="button" class="service-close" aria-label="閉じる">×</button></div><div class="service-dialog-body"><h2 id="work-detail-title"></h2><div id="work-detail-content"></div></div></div></dialog><dialog id="service-dialog" class="service-dialog" aria-labelledby="service-dialog-title">
+  <div class="service-browser">
+    <div class="service-browser-bar">
+      <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="browser-address">inomoto.local / order / services</div>
+      <button class="service-close" type="button" aria-label="閉じる">×</button>
+    </div>
+    <div class="service-dialog-body">
+      <span class="order-label">ORDER / 01</span>
+      <h2 id="service-dialog-title">制作内容</h2>
+      <p>ご依頼いただける制作内容の詳細を、こちらでご案内します。</p>
+      <div class="service-placeholder"><h3>対応可能な制作内容</h3><p>Vtuberの3DCG化、VRChat向けのアバターの制作、映像制作用の小物制作、ワールド用のプロップの作成など多様なニーズに合わせてモデルを制作いたします</p></div>
+      <div class="service-placeholder"><h3>対応可能な形式</h3><p>・VRM
+・unitypackage
+・FBX
+・PMD、PMX</p></div>
+      <p class="service-note"></p>
+      
+    </div>
+  </div>
+</dialog>
+<dialog id="flow-dialog" class="service-dialog" aria-labelledby="flow-dialog-title">
+ <div class="service-browser"><div class="service-browser-bar"><div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div><div class="browser-address">inomoto.local / order / flow</div><button class="service-close" type="button" aria-label="閉じる">×</button></div>
+ <div class="service-dialog-body"><span class="order-label">ORDER / 02</span><h2 id="flow-dialog-title">制作の流れ</h2><p>ご相談から納品までの流れをご案内します。</p>
+ <div class="service-placeholder"><h3>01 / お問い合わせ・ご相談</h3><p>・お名前 / SNSのURLなど
+・三面図等のデザイン資料
+・ご要望、モデル使用用途
+・ご予算
+・納期​
+​・追加オプションの有無などのヒアリング
+等をメール、もしくはX(旧Twitter)のDMで送信してください。</p></div>
+ <div class="service-placeholder"><h3>02 / お見積もり・内容確認</h3><p>モデリングのデザインなど精査した後
+制作範囲、料金、納期などをご相談のうえ決定します。</p></div>
+ <div class="service-placeholder"><h3>03 / 制作・確認</h3><p>前金の入金を確認次第制作に取り掛からせていただきます
+前金は合計金額の半額をお支払いしていただきます。
+(ご希望次第では全額のお支払いも可能です)
+制作は2か月～3か月ほどかかります。
+確認のタイミングや修正条件はご依頼ごとにご案内します。</p></div>
+ <div class="service-placeholder"><h3>04 / 納品</h3><p>モデルを実際に動かしてみて不備がないかを調整、ご相談のうえ決定した形式で納品します。</p></div>
+ <p class="service-note"></p></div></div>
+</dialog>
+<dialog id="price-dialog" class="service-dialog" aria-labelledby="price-dialog-title">
+ <div class="service-browser"><div class="service-browser-bar"><div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div><div class="browser-address">inomoto.local / order / pricing</div><button class="service-close" type="button" aria-label="閉じる">×</button></div>
+ <div class="service-dialog-body"><span class="order-label">ORDER / 03</span><h2 id="price-dialog-title">料金・納期</h2><p>お見積もりと制作期間についてのご案内です。</p>
+ <div class="service-placeholder"><h3>制作料金</h3><p>
+◆3Dモデル制作・・・60万~
+(VRC用のunitypackageまたはVRM形式の納品)
+◆頭部のみ制作・・・35万~
+◆衣装のみ制作・・・25万~
+◆小物のみ制作・・・3万~
+その他キャラクターデザイン、衣装デザイン等承っております。
+＊デザインの複雑さにより価格は変動致します(60~90万程)
+＊デザインはオリジナルデザインのみ受け付けております
+＊リテイクが多い場合は追加料金が発生することがあります
+＊パーフェクトシンク対応に関してはご相談ください。
+＊実績公開や進捗の公開をX(旧Twitter)でさせていただきます（実績非公開の場合は別途料金が発生します）
+＊料金は税別料金です。</p></div>
+ <div class="service-placeholder"><h3>納期について</h3><p>制作期間は内容やスケジュールに応じてご相談となります。希望納期がある場合はお問い合わせ時にお知らせください。アバター一体の制作期間は概ね2か月～3か月程度かかります</p></div>
+ <div class="service-placeholder"><h3>お見積もりに必要な情報</h3><p>制作物の用途、参考資料、ご希望の仕様、希望納期等をメール、もしくはX(旧Twitter)のDMで送信してください。</p></div>
+ <p class="service-note"></p></div></div>
+</dialog>
+<footer><span>© INOMOTO</span></footer>
+
+</body></html>
