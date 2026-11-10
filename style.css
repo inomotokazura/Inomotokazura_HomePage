@@ -181,3 +181,181 @@ footer{background:#91D9BF;color:#805252}
   }
   .site-header nav a { font-size:10px; letter-spacing:0; }
 }
+
+
+/* SVG升目背景のゆっくりした変形＋マウス追従。既存のレイアウトを維持 */
+.hero-bg .hero-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-bg #hero-wave-pointer {
+  opacity: 0;
+  transition: opacity 350ms ease-out;
+}
+.hero-bg.hero-wave-is-hovering #hero-wave-pointer {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg #hero-wave-pointer { display: none; }
+}
+
+/* v15: 背景のマウス歪みだけ無効化（ゆっくりした波は維持） */
+.hero-bg #hero-wave-pointer { display: none !important; }
+
+/* 真ん中のキャラクターだけをふわっとマウスに追従させる。
+   個別の translate/rotate を使い、従来のふわふわ浮く transform アニメーションと共存。 */
+.art-stack .character-art {
+  pointer-events: none;
+  translate: var(--icon-x, 0px) var(--icon-y, 0px);
+  rotate: var(--icon-turn, 0deg);
+  transition: translate 180ms ease-out, rotate 180ms ease-out, filter 250ms ease-out;
+}
+.art-stack.is-character-near .character-art {
+  filter: drop-shadow(0 19px 13px #537f7a65) brightness(1.06);
+}
+.art-stack.is-character-hovered .character-art {
+  filter: drop-shadow(0 20px 15px #537f7a75) brightness(1.09);
+}
+/* SVGのキャラクター絵の中心に重ねる透明なボタン。見た目や名前画像は変えない。 */
+.art-stack .hero-character-hitbox {
+  position: absolute;
+  z-index: 4;
+  left: 31%;
+  top: 19%;
+  width: 38%;
+  height: 63%;
+  padding: 0;
+  border: 0;
+  border-radius: 46%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.art-stack .hero-character-hitbox:focus-visible {
+  outline: 3px dashed #FDFFEB;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 7px #80525280;
+}
+/* 背景から独立した、クリック位置で飛び散る絵文字。クリックの邪魔をしない。 */
+.hero-food-particle {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  font-family: 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+  font-size: var(--particle-size, 26px);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity;
+  filter: drop-shadow(0 3px 2px #80525240);
+  animation: hero-food-burst var(--particle-duration, 900ms) cubic-bezier(.2,.65,.25,1) var(--particle-delay, 0ms) both;
+}
+@keyframes hero-food-burst {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.28) rotate(0deg); }
+  13% { opacity: 1; }
+  68% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--particle-x, 0px)), calc(-50% + var(--particle-y, 0px))) scale(.93) rotate(var(--particle-rotate, 0deg));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .art-stack .character-art { translate: 0 0; rotate: 0deg; transition: none; }
+  .hero-food-particle { animation: none; display: none; }
+}
+
+/* v16: ORDER詳細の本文。Enterによる改行と安全なインライン装飾を表示する。 */
+#service-dialog .service-dialog-body > p,
+#flow-dialog .service-dialog-body > p,
+#price-dialog .service-dialog-body > p,
+#service-dialog .service-placeholder p,
+#flow-dialog .service-placeholder p,
+#price-dialog .service-placeholder p,
+#service-dialog .service-note,
+#flow-dialog .service-note,
+#price-dialog .service-note {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+#service-dialog .service-dialog-body a,
+#flow-dialog .service-dialog-body a,
+#price-dialog .service-dialog-body a {
+  color: #267a68;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+#service-dialog .service-dialog-body a:hover,
+#flow-dialog .service-dialog-body a:hover,
+#price-dialog .service-dialog-body a:hover {
+  color: #805252;
+}
+#service-dialog .service-dialog-body a:focus-visible,
+#flow-dialog .service-dialog-body a:focus-visible,
+#price-dialog .service-dialog-body a:focus-visible {
+  outline: 2px solid #267a68;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+
+/* v17 CONTACT: GitHub Pages対応のメール送信フォーム（他セクション非変更） */
+#contact .contact-form-area {
+  max-width: 730px;
+  margin: 30px auto 32px;
+  padding: clamp(19px, 4.5vw, 34px);
+  text-align: left;
+  background: #fffdf8;
+  border: 2px solid #91D9BF;
+  border-radius: 24px;
+  box-shadow: 5px 6px 0 #91D9BF55;
+}
+#contact .contact-form-heading {
+  margin: 0 0 5px;
+  font-size: clamp(19px, 2.7vw, 23px);
+  color: #805252;
+}
+#contact .contact-form-heading span {color:#6EB89E}
+#contact .contact-form-intro {margin: 0 0 19px; font-size: 13px; line-height: 1.8;}
+#contact .contact-form-fields {display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 17px 15px;}
+#contact .contact-full {grid-column:1 / -1}
+#contact .contact-form-field {display:flex; flex-direction:column; align-items:stretch; min-width:0; gap:7px; font-weight:800; font-size:13px; color:#805252}
+#contact .contact-required {display:inline-block; margin-left:6px; padding:1px 7px; border-radius:20px; background:#E7F6F0; color:#366958; font-size:10px; vertical-align:middle;}
+#contact .contact-form-field input,
+#contact .contact-form-field textarea {
+  display:block; width:100%; min-width:0; min-height:46px;
+  padding:12px 14px; border:2px solid #CAE8DE; border-radius:13px;
+  background:#fff; color:#805252; font-family:inherit; font-size:15px; line-height:1.55; box-sizing:border-box;
+  outline:none; transition:border-color .15s ease, box-shadow .15s ease;
+}
+#contact .contact-form-field textarea {min-height:158px; resize:vertical;}
+#contact .contact-form-field input::placeholder,
+#contact .contact-form-field textarea::placeholder {color:#9A8B8B; opacity:.9; font-weight:400}
+#contact .contact-form-field input:focus-visible,
+#contact .contact-form-field textarea:focus-visible {border-color:#6EB89E; box-shadow:0 0 0 3px #91D9BF55}
+#contact .contact-form-actions {display:flex; justify-content:center; padding-top:24px}
+#contact .contact-submit {
+  appearance:none; min-width:min(100%,240px); padding:13px 26px;
+  border:2px solid #805252; border-radius:30px;
+  background:#91D9BF; color:#805252; box-shadow:0 5px 0 #6EB89E;
+  font:900 15px/1.5 inherit; font-family:inherit; font-weight:900; font-size:15px;
+  cursor:pointer; transition:transform .2s ease, box-shadow .2s ease;
+}
+#contact .contact-submit:not(:disabled):hover {transform:translateY(-2px); box-shadow:0 7px 0 #6EB89E;}
+#contact .contact-submit:not(:disabled):active {transform:translateY(3px); box-shadow:0 2px 0 #6EB89E;}
+#contact .contact-submit:focus-visible {outline:3px solid #805252; outline-offset:3px;}
+#contact .contact-submit:disabled {opacity:.52; cursor:not-allowed;}
+#contact .contact-form-status {margin:14px 0 3px; font-size:12px; color:#805252; text-align:center; line-height:1.7;}
+#contact .contact-form-privacy {margin:6px 0 0; font-size:11px; color:#8D8080; text-align:center; line-height:1.8;}
+#contact .contact-honeypot {position:absolute!important; left:-10000px!important; width:1px!important; height:1px!important; opacity:0!important; pointer-events:none!important;}
+@media (max-width:580px) {
+  #contact .contact-form-fields {grid-template-columns:1fr; gap:14px;}
+  #contact .contact-form-area {padding:19px 16px;}
+}
