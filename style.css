@@ -359,3 +359,64 @@ footer{background:#91D9BF;color:#805252}
   #contact .contact-form-fields {grid-template-columns:1fr; gap:14px;}
   #contact .contact-form-area {padding:19px 16px;}
 }
+
+
+/* v18: 浮遊するごはんSVG。従来の位置とふわふわ揺れる動きはそのまま。 */
+.hero .decor {
+  display: block;
+  width: clamp(116px, 12vw, 170px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  line-height: 0;
+  text-shadow: none;
+}
+.hero .decor img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 7px 6px #80525229);
+}
+.hero .decor.d1 {width: clamp(115px, 12vw, 168px)}
+.hero .decor.d2 {width: clamp(112px, 11.7vw, 164px)}
+.hero .decor.d3 {width: clamp(119px, 12.4vw, 174px)}
+.hero .decor.d4 {width: clamp(114px, 11.9vw, 167px)}
+
+/* LIKES: 3カテゴリの絵文字を添付SVGに置換 */
+#likes .like-tile .likes-category-icon {
+  display: block;
+  width: clamp(82px, 9vw, 112px);
+  height: clamp(82px, 9vw, 112px);
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 中央キャラクターのクリックで舞う、SVG画像のパーティクル */
+.hero-food-particle {
+  display: block;
+  width: var(--particle-size, 40px);
+  height: var(--particle-size, 40px);
+  font-size: 0;
+  line-height: 0;
+}
+.hero-food-particle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+@media (max-width: 700px) {
+  .hero .decor.d1 {width: clamp(65px, 16vw, 98px)}
+  .hero .decor.d2 {width: clamp(65px, 16vw, 98px)}
+  .hero .decor.d3 {width: clamp(65px, 16vw, 98px)}
+  .hero .decor.d4 {width: clamp(65px, 16vw, 98px)}
+  #likes .like-tile .likes-category-icon {
+    width: clamp(54px, 15vw, 82px);
+    height: clamp(54px, 15vw, 82px);
+  }
+}
