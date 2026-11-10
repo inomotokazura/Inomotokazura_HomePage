@@ -1,4 +1,4 @@
-/* トップ中央キャラクターだけがマウスに反応。クリックでごはん絵文字を散らす。 */
+/* トップ中央キャラクターだけがマウスに反応。クリックで Effect の SVG を散らす。 */
 (() => {
   'use strict';
   const hero = document.querySelector('#home.hero');
@@ -8,7 +8,30 @@
   if (!hero || !art || !character || !button) return;
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const foods = ['🍙', '🍤', '🍣', '🥩', '✦', '🍱', '🍘', '🍡', '🍚', '🥟', '🍜', '🍛', '🍢'];
+  // Effect.zip 内の SVG 全21種類を、クリックのたびにランダムな順で表示する。
+  const effectPaths = [
+    'assets/effect/burokkori.svg',
+    'assets/effect/cheeze.svg',
+    'assets/effect/creative.svg',
+    'assets/effect/ebi.svg',
+    'assets/effect/food.svg',
+    'assets/effect/games.svg',
+    'assets/effect/gohan.svg',
+    'assets/effect/gyouza.svg',
+    'assets/effect/hoshi_1.svg',
+    'assets/effect/hoshi_2.svg',
+    'assets/effect/hoshi_3.svg',
+    'assets/effect/hotdog.svg',
+    'assets/effect/kareee.svg',
+    'assets/effect/kinoko.svg',
+    'assets/effect/niku.svg',
+    'assets/effect/oden.svg',
+    'assets/effect/omuraisu.svg',
+    'assets/effect/onigiri.svg',
+    'assets/effect/ra-men.svg',
+    'assets/effect/sushi.svg',
+    'assets/effect/toumorokoshi.svg',
+  ];
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const reset = () => {
     character.style.setProperty('--icon-x', '0px');
@@ -40,27 +63,38 @@
 
   function burst(x, y) {
     if (reducedMotion.matches) return;
-    const amount = 14;
-    const distanceScale = Math.min(1, window.innerWidth / 670);
+    const amount = effectPaths.length;
+    const distanceScale = Math.max(0.63, Math.min(1, window.innerWidth / 800));
+    // 1回のクリックで全種類を1度ずつ、毎回違う順番で散らす。
+    const shuffled = [...effectPaths];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
     for (let i = 0; i < amount; i++) {
       const piece = document.createElement('span');
       piece.className = 'hero-food-particle';
-      piece.textContent = foods[Math.floor(Math.random() * foods.length)];
       piece.setAttribute('aria-hidden', 'true');
       piece.style.left = `${x}px`;
       piece.style.top = `${y}px`;
-      const angle = (Math.PI * 2 * i / amount) + (Math.random() - 0.5) * 0.46;
-      const distance = (78 + Math.random() * 108) * Math.max(0.65, distanceScale);
+      const image = document.createElement('img');
+      image.src = shuffled[i];
+      image.alt = '';
+      image.draggable = false;
+      image.decoding = 'async';
+      piece.appendChild(image);
+      const angle = (Math.PI * 2 * i / amount) + (Math.random() - 0.5) * 0.30;
+      const distance = (105 + Math.random() * 145) * distanceScale;
       piece.style.setProperty('--particle-x', `${(Math.cos(angle) * distance).toFixed(1)}px`);
-      piece.style.setProperty('--particle-y', `${(Math.sin(angle) * distance - 27).toFixed(1)}px`);
-      piece.style.setProperty('--particle-rotate', `${(Math.random() * 340 - 170).toFixed(1)}deg`);
-      piece.style.setProperty('--particle-size', `${Math.round(20 + Math.random() * 18)}px`);
-      piece.style.setProperty('--particle-duration', `${Math.round(740 + Math.random() * 370)}ms`);
-      piece.style.setProperty('--particle-delay', `${Math.round(Math.random() * 85)}ms`);
+      piece.style.setProperty('--particle-y', `${(Math.sin(angle) * distance - 24).toFixed(1)}px`);
+      piece.style.setProperty('--particle-rotate', `${(Math.random() * 300 - 150).toFixed(1)}deg`);
+      piece.style.setProperty('--particle-size', `${Math.round((32 + Math.random() * 21) * Math.max(0.75, distanceScale))}px`);
+      piece.style.setProperty('--particle-duration', `${Math.round(900 + Math.random() * 420)}ms`);
+      piece.style.setProperty('--particle-delay', `${Math.round(Math.random() * 100)}ms`);
       piece.addEventListener('animationend', () => piece.remove(), { once: true });
       document.body.appendChild(piece);
-      // Guard against interrupted CSS animations or inactive tabs.
-      window.setTimeout(() => piece.remove(), 1500);
+      // タブ切替などでアニメーションが中断された場合も要素を残さない。
+      window.setTimeout(() => piece.remove(), 1700);
     }
   }
 
